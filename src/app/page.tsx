@@ -1,103 +1,72 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import BasicSlider from '@/components/ui/BasicSlider';
+import Link from 'next/link';
+import { imgSesion } from '@/utils/HomeImagesConst';
+import PageTransition from '@/components/ui/PageTransition';
+import Image from 'next/image';
+import ContactForm from '@/components/ContactForm';
+
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <PageTransition>
+      <div className='text-center'>
+        <BasicSlider />
+        <h1 className='text-5xl py-20'>SESIONES</h1>
+        <section className='grid grid-cols-1 md:grid-cols-3 h-auto mx-auto gap-x-10 px-8 md:px-16 gap-y-10 pb-20'>
+          {imgSesion.map((img, index) => (
+            <div className='w-full relative break-inside-avoid' key={index}>
+              <Link key={img.Caption} href={img.path}>
+                <Image 
+                  src={img.Url} 
+                  alt={img.Caption} 
+                  loading='lazy'
+                  className='w-full h-full block object-cover rounded-lg transition-all duration-300 ease-in-out group-hover:brightness-70 group-hover:scale-102'
+                  width={400}
+                  height={600}
+                />
+                <span className='absolute bottom-[15%] left-1/2 transform -translate-x-1/2 bg-[rgba(177,149,142,0.7)] text-white p-2 w-[60%] text-center text-3xl font-black rounded-md'>
+                  {img.Caption}
+                </span>
+              </Link>
+            </div>
+          ))}
+        </section>
+        
+        <section className='bg-rosita w-full h-auto mx-auto leading-10 text-center justify-center items-center px-8 flex flex-col py-20' id='francesca-santos'>
+          <h1 className='text-4xl text-white mb-20'>SOBRE MI</h1>
+          <div className='flex gap-10 flex-col-reverse md:flex-row w-full md:w-[80%] mx-auto pb-10 justify-start items-center md:m-0'>
+            <div className='flex flex-col gap-4 md:w-1/2'>
+              <h1 className='text-2xl text-left font-bold'>Autenticidad, Emoción, Arte</h1>
+              <p className='w-full text-left'>
+                En mi fotografía, creo en el poder de capturar momentos que trascienden el tiempo, convirtiendo emociones en recuerdos tangibles. Especializada en maternidad, retratos familiares e infantiles, me dedico a crear imágenes que no solo documentan, sino que celebran la belleza única de cada etapa de la vida. Con una formación sólida y un enfoque artístico, combino técnica, sensibilidad y atención al detalle para ofrecer fotografías que se conviertan en tesoros familiares.
+              </p>
+            </div>
+            <img 
+              src='./Images/sobre-mi.jpg' 
+              className='w-full mb-10 md:m-0 md:w-1/2 h-[200px] md:h-[400px] object-cover rounded-xl'
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          </div>
+          <div className='flex gap-10 flex-col-reverse md:flex-row-reverse w-full md:w-[80%] mx-auto justify-end items-center mt-10'>
+            <div className='flex flex-col gap-4 md:w-1/2'>
+              <h1 className='text-2xl text-left font-bold'>Mi Historia</h1>
+              <p className='w-full text-left'>
+                Soy Francesca Santos, fotógrafa especializada en maternidad, familias y niños. Desde 2019, capturo momentos llenos de emoción y autenticidad, transformándolos en recuerdos atemporales.
+                Mi formación incluye estudios en el Colegio de Fotografía de Occidente y especializaciones en Fine Art, iluminación y retrato, aprendiendo de grandes referentes como Mónica Olvera y Javi Mercader. Cada sesión la vivo con pasión y dedicación, buscando que tus fotografías no solo sean imágenes, sino piezas de arte que cuenten tu historia.
+                Porque los mejores momentos merecen ser guardados para siempre.
+              </p>
+            </div>
+            <img 
+              src='./Images/sobre-mi.jpg' 
+              className='w-full mb-10 md:m-0 md:w-[50%] h-[200px] md:h-[400px] object-cover rounded-xl'
+            />
+          </div>
+        </section>
+        
+        <ContactForm />
+      </div>
+    </PageTransition>
   );
-}
+};
+
+export default Home;

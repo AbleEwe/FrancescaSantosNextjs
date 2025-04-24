@@ -7,7 +7,7 @@ export const ceremoniesData = [
 export const infantilData = [
     {
     ImageBg: './Images/FotosSubSesiones/PortadasSesiones/infantil.jpg', 
-    title: 'Infantil'
+    title: 'Infantiles'
 },
 ]
 export const infantilExteriorData = [

@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import { getSesionBySlug } from '@/lib/sesionSlides'
 import SesionPageClient from './SesionPageClient'
 
+export const dynamic = 'force-dynamic'
+
 type Props = {
   params: Promise<{ sesion: string }>
 }

@@ -4,6 +4,9 @@ import Footer from "@/components/layout/Footer";
 import { getDropdownSesionItems } from "@/lib/sesionSlides";
 import localFont from "next/font/local";
 
+// Avoid connecting to MongoDB during Vercel build (build IPs are not whitelisted in Atlas)
+export const dynamic = "force-dynamic";
+
 const Butler = localFont({
   src: [
     {

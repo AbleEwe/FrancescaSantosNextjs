@@ -41,7 +41,7 @@ export const dropDownItems = [
     },
     {
         title: 'Producto',
-        path: "/producto"
+        path: "producto"
     },
     {
         title: 'Retrato',

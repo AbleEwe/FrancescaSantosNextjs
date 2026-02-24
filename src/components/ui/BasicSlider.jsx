@@ -36,7 +36,7 @@ const Slider = () => {
     };
   }, [activeImage]);
   return (
-    <main className="relative w-full h-screen">
+    <main className="relative w-full h-[60vh] md:h-screen">
       <div className="w-full h-full">
         {imageUrl.map((elem, idx) => (
           <div

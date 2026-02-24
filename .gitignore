@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Payload uploads (stored in DB metadata; files on disk optional to commit)
+/media
+
 # vercel
 .vercel
 

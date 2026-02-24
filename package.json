@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@payloadcms/db-mongodb": "^3.39.1",
+    "@payloadcms/next": "^3.39.1",
+    "@payloadcms/payload-cloud": "^3.39.1",
+    "@payloadcms/richtext-lexical": "^3.39.1",
     "@radix-ui/react-slot": "^1.2.0",
     "@radix-ui/react-tabs": "^1.1.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.6.3",
+    "graphql": "^16.11.0",
     "lucide-react": "^0.503.0",
     "motion": "^12.7.4",
     "next": "15.3.0",
+    "payload": "^3.39.1",
+    "sharp": "^0.34.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-slideshow-image": "^4.3.2",
@@ -33,5 +40,8 @@
     "tailwindcss": "^4",
     "tw-animate-css": "^1.2.8",
     "typescript": "^5"
+  },
+  "overrides": {
+    "sharp": "^0.34.5"
   }
 }

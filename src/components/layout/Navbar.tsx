@@ -3,8 +3,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import DropdownMenu from '../ui/DropdownMenu';
+import type { DropdownSesionItem } from '@/lib/sesionSlides';
 
-const Navbar = () => {
+type NavbarProps = {
+  dropdownItems?: DropdownSesionItem[];
+};
+
+const Navbar = ({ dropdownItems }: NavbarProps) => {
+  const sesionItems = dropdownItems ?? []
     const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);
     const [dropDown, setDropdown] = useState(false);
@@ -117,7 +123,7 @@ const Navbar = () => {
                         >
                             Sesiones
                         </Link>
-                        {dropDown && <DropdownMenu/>}
+                        {dropDown && <DropdownMenu items={sesionItems} />}
                     </li>
                     <li className='w-full text-center border-t-2 border-white md:border-none'>
                         <Link 

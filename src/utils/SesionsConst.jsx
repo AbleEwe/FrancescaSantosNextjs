@@ -73,7 +73,7 @@ export const montajesData = [
 export const otonoData = [
     {
     ImageBg: './Images/FotosSubSesiones/PortadasSesiones/otono.jpg', 
-    title: 'Otoño'
+    title: 'Otono'
 },
 ]
 export const productoData = [

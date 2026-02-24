@@ -9,10 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "^3.39.1",
-    "@payloadcms/next": "^3.39.1",
-    "@payloadcms/payload-cloud": "^3.39.1",
-    "@payloadcms/richtext-lexical": "^3.39.1",
+    "next": "canary",
+    "react": "latest",
+    "react-dom": "latest",
+
+    "payload": "latest",
+    "@payloadcms/next": "latest",
+    "@payloadcms/db-mongodb": "latest",
+    "@payloadcms/richtext-lexical": "latest",
+    "@payloadcms/payload-cloud": "latest",
+
     "@radix-ui/react-slot": "^1.2.0",
     "@radix-ui/react-tabs": "^1.1.9",
     "class-variance-authority": "^0.7.1",
@@ -21,10 +27,6 @@
     "graphql": "^16.11.0",
     "lucide-react": "^0.503.0",
     "motion": "^12.7.4",
-    "next": "^16.1.6",
-    "payload": "^3.39.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "react-slideshow-image": "^4.3.2",
     "sharp": "^0.34.5",
     "tailwind-merge": "^3.2.0"
@@ -36,7 +38,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "^16.1.6",
+    "eslint-config-next": "canary",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.2.8",
     "typescript": "^5"

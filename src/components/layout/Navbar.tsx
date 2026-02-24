@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import DropdownMenu from '../ui/DropdownMenu';
 import type { DropdownSesionItem } from '@/lib/sesionSlides';
@@ -45,12 +46,14 @@ const Navbar = ({ dropdownItems }: NavbarProps) => {
                     navBar ? 'bg-rosita' : 'bg-black/30'
                 }`}
             >
-                <div className='h-full'>
-                    <Link href="/">
-                        <img 
+                <div className='h-full relative w-32'>
+                    <Link href="/" className="block h-full relative">
+                        <Image 
                             src="/Images/Logos/LogoFStranspBlanco.png" 
                             alt="Logo Francesca Santos" 
-                            className='h-full w-auto'
+                            fill
+                            className='object-contain object-left'
+                            sizes="128px"
                         />
                     </Link>
                 </div>

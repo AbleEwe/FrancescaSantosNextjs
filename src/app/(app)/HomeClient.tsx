@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import BasicSlider from '@/components/ui/BasicSlider'
 import PageTransition from '@/components/ui/PageTransition'
 import ContactForm from '@/components/ContactForm'
@@ -39,8 +40,10 @@ export default function HomeClient({ homeSlides }: HomeClientProps) {
                 se conviertan en tesoros familiares.
               </p>
             </div>
-            <img
-              src="./Images/sobre-mi.jpg"
+            <Image
+              src="/Images/sobre-mi.jpg"
+              width={600}
+              height={400}
               className="w-full mb-10 md:m-0 md:w-1/2 h-[200px] md:h-[400px] object-cover rounded-xl"
               alt="Francesca Santos"
             />
@@ -61,8 +64,10 @@ export default function HomeClient({ homeSlides }: HomeClientProps) {
                 ser guardados para siempre.
               </p>
             </div>
-            <img
-              src="./Images/sobre-mi.jpg"
+            <Image
+              src="/Images/sobre-mi.jpg"
+              width={600}
+              height={400}
               className="w-full mb-10 md:m-0 md:w-[50%] h-[200px] md:h-[400px] object-cover rounded-xl"
               alt="Francesca Santos"
             />
